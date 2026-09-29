@@ -1,0 +1,4 @@
+DEVPLAN.local.md
+*.swp
+.DS_Store
+tests/private-names.txt
