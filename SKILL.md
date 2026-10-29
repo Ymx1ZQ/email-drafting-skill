@@ -100,6 +100,7 @@ The English version drops the context sentence and joins the ask with its reason
 - Send emails as **HTML**: content type `text/html`, with **one `<p>` per paragraph**. No line breaks inside a paragraph; `<br>` only in the signature block.
 - The reason: `text/plain` is **hard-wrapped by the mail transport at 72-76 characters**. "One paragraph is one continuous line" describes how you write, but it does not survive sending as plain text: the recipient gets sentences broken mid-line even when the text you composed was correct. In HTML a paragraph is a block and reflows to the reader's window.
 - **Reading the email back with the same tool that sent it is not a check**: reading re-joins the lines and hides the wrap. To verify, open the message in a mail client — or remove the problem at the source by sending HTML.
+- **Attachments carry a descriptive name.** Attach a copy named for the recipient: client, content and period, for example `Acme - quarterly review (2026-07-01 to 2026-09-30).pdf`. Never attach `presentation.pdf`, `report.pdf` or a bare date, which say nothing outside the folder they came from. Write dates in ISO form: `26-09-24` reads as another date in another country. Name the attachments in the body only when the email says "attached".
 - Default: **draft**, not send. Send only on an explicit go-ahead. "Send it to X and I'll forward it" is not that go-ahead: it is a request to prepare the material.
 
 ## When they only ask how to say it

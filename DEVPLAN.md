@@ -47,3 +47,13 @@ Published as `Ymx1ZQ/email-drafting-skill` (public). Before this the skill was I
 - [x] `LICENSE` (MIT) and `.gitignore`.
 - [x] `tests/test_skill_md.sh`: guards on the English text, the tone section with both examples, and a guard against private names in tracked files.
 - [x] Repo initialised, pushed to a public GitHub repo; `./install.sh --force` + md5 check.
+
+### M5 - Attachments carry a descriptive name
+
+Status: completed (2026-10-29) ✅
+
+Requested by the operator on 2026-10-29 after two PDFs went out as `presentation.pdf` and a bare date.
+
+- [x] `SKILL.md` §Sending: attach a copy named with client, content and ISO period; never a generic name or a bare date; name attachments in the body only when the email says "attached".
+- [x] `tests/test_skill_md.sh`: guard on the rule.
+- [x] Tests green; commit and push; `./install.sh --force`.

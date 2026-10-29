@@ -30,6 +30,7 @@ check "'Sending' section present"                   "grep -qE '^## Sending' '$SK
 check "HTML sending prescribed (text/html)"         "grep -q 'text/html' '$SKILL'"
 check "one <p> per paragraph prescribed"            "grep -q 'one \`<p>\` per paragraph' '$SKILL'"
 check "draft by default restated"                   "grep -q 'Default: \*\*draft\*\*' '$SKILL'"
+check "attachments must have a descriptive name"      "grep -q 'Attachments carry a descriptive name' '$SKILL' && grep -q 'bare date' '$SKILL'"
 check "150-word ceiling present"                    "grep -q '150 words' '$SKILL'"
 
 # Regression guard: no paragraph line in the prose may end mid-sentence on a bare word
