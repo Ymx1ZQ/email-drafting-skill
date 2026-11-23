@@ -57,3 +57,18 @@ Requested by the operator on 2026-10-29 after two PDFs went out as `presentation
 - [x] `SKILL.md` §Sending: attach a copy named with client, content and ISO period; never a generic name or a bare date; name attachments in the body only when the email says "attached".
 - [x] `tests/test_skill_md.sh`: guard on the rule.
 - [x] Tests green; commit and push; `./install.sh --force`.
+
+### M6 - The repo distributes the skill as a plain folder
+
+Status: completed (2026-11-23) ✅
+
+**Why:** the skill was installed by a copy-only `install.sh`, and the payload was the repository root, so the folder an assistant needs could not be copied or pinned as it is. A plain folder works with every assistant's own skills directory and with Codex's skill installer.
+
+**Approach:** move `SKILL.md` into an `email-drafting/` folder named like the skill, delete the installer, and document a manual copy.
+
+**Tasks:**
+- [x] `git mv SKILL.md email-drafting/SKILL.md`; `tests/test_skill_md.sh` points at the new path, every check kept.
+- [x] `git rm install.sh`.
+- [x] `README.md`: Install rewritten (copy per assistant, Codex pinned install, update, no installer, layout); Customise names `email-drafting/SKILL.md`.
+
+**Done when:** tests are green at the new path and no live document refers to `install.sh`.

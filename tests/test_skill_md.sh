@@ -5,7 +5,7 @@ set -uo pipefail
 # and a guard against private names leaking into tracked files.
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SKILL="$DIR/SKILL.md"
+SKILL="$DIR/email-drafting/SKILL.md"
 fail=0
 
 check() {

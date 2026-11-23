@@ -14,18 +14,34 @@ It triggers when you ask for an email in either language ("write an email to…"
 
 ## Install
 
+`email-drafting/` is the whole skill: one folder holding `SKILL.md`. Put a copy where your assistant reads skills.
+
 ```bash
 git clone https://github.com/Ymx1ZQ/email-drafting-skill.git
-cd email-drafting-skill
-./install.sh --force      # deploys to ~/.claude/skills/email-drafting/
-./install.sh --uninstall  # removes the installed skill
+cp -r email-drafting-skill/email-drafting ~/.claude/skills/email-drafting            # Claude Code
+cp -r email-drafting-skill/email-drafting ~/.gemini/skills/email-drafting            # Gemini CLI
+cp -r email-drafting-skill/email-drafting ~/.config/opencode/skills/email-drafting   # opencode
 ```
 
-Skills load at session start: restart Claude Code after installing.
+For Codex, its skill installer takes the GitHub path directly; pin a tag or a commit instead of `main`, because a moving branch changes the instructions the assistant follows:
+
+```
+$skill-installer install Ymx1ZQ/email-drafting-skill/tree/<tag-or-commit>/email-drafting
+```
+
+A manual Codex copy goes in `~/.agents/skills/email-drafting`. Keep one active copy per assistant.
+
+Skills load at session start: restart the assistant after installing.
+
+**Update.** Save any local edits, then replace the whole installed folder with the new one. `diff -r email-drafting-skill/email-drafting <installed folder>` shows whether a copy has drifted from the source.
+
+**Not provided.** There is no installer script; earlier versions had `install.sh`.
+
+**Layout.** The payload is the `email-drafting/` folder. README, LICENSE, DEVPLAN and tests stay at the repository root and are not part of the skill.
 
 ## Customise
 
-Edit `SKILL.md` to change the signature, the word limit, or to add a language to the *Tone by language* table, then run `./install.sh --force` again.
+Edit `email-drafting/SKILL.md` to change the signature, the word limit, or to add a language to the *Tone by language* table, then replace the installed folder with the edited one.
 
 ## Test
 
